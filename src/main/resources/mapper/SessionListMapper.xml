@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.raytine.message.mapper.SessionListMapper">
+  <resultMap id="BaseResultMap" type="com.raytine.message.model.Session">
+    <!--@mbg.generated-->
+    <!--@Table session_list-->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="send_id" jdbcType="INTEGER" property="sendId" />
+    <result column="target_id" jdbcType="INTEGER" property="targetId" />
+    <result column="chat_type" jdbcType="INTEGER" property="chatType" />
+    <result column="msg_content" jdbcType="VARCHAR" property="msgContent" />
+    <result column="session_time" jdbcType="TIMESTAMP" property="sessionTime" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    id, send_id, target_id, chat_type, msg_content, session_time
+  </sql>
+</mapper>
