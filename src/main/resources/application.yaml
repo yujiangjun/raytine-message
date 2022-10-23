@@ -10,4 +10,6 @@ spring:
     database: 1
 server:
   servlet:
-    context-path: message
+    context-path: /message
+logging:
+  config: classpath:log4j2.xml
