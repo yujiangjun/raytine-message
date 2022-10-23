@@ -25,4 +25,6 @@ public class Session {
     private Date sessionTime = new Date();
     private String sendUserName;
     private String sendUserAvatar;
+    private String targetName;
+    private String targetAvatar;
 }
