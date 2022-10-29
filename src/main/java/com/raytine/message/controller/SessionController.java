@@ -21,7 +21,11 @@ public class SessionController extends BaseController{
 
     @PostMapping("addUpdate")
     public Resp<Void> addUpdateSession(@RequestBody Session session){
-        LambdaQueryWrapper<Session> queryWrapper = new QueryWrapper<Session>().lambda().eq(Session::getSendId, session.getSendId()).eq(Session::getTargetId, session.getTargetId()).last("limit 1");
+        LambdaQueryWrapper<Session> queryWrapper = new QueryWrapper<Session>()
+                .lambda()
+                .eq(Session::getSendId, session.getSendId())
+                .eq(Session::getTargetId, session.getTargetId())
+                .or(item-> item.eq(Session::getSendId,session.getTargetId()).eq(Session::getTargetId,session.getSendId()));
         Session one = sessionListService.getOne(queryWrapper);
         if (one!=null){
             session.setId(one.getId());
